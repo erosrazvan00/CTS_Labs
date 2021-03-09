@@ -12,4 +12,7 @@ Phase 1 - Naming Conventions
 
 - add validations for input values
 
+Phase 2 - KISS & Single Responsability
+-simplify the expressions
+- a function should do only one thing
 
