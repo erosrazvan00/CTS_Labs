@@ -10,4 +10,6 @@ Phase 1 - Naming Conventions
 
 - remove the hard-coded values aka "magic numbers" 
 
+- add validations for input values
+
 
