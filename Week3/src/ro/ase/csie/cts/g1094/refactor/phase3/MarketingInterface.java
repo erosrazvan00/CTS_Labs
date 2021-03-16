@@ -7,6 +7,4 @@ public interface MarketingInterface {
 	
 	 public float getFidelityDiscount(int accountAge);
 	 
-	  
-	    
 }
