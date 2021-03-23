@@ -23,6 +23,7 @@ public class DBConnection {
 	}
 	
 //SINGLETON - PREVENTING MULTIPLE OBJECTS	
+//LAZY INSTANTIATION OF THE UNIQUE OBJECT
 	public static DBConnection getConnection() {
 		if(DBConnection.connection == null) {
 			connection = new DBConnection();
