@@ -10,5 +10,8 @@
 - an efficient solution must be found to create several instances of the same character
 
 
-keywords: many attributes; creation of the super-hero; 
+keywords builder: many attributes; creation of the super-hero; 
 creating objects -> singleton, builder, factory, prototype;
+
+
+keywords prototype: creating, is an expensive process, an efficient solution, to create several instances of the same character 
