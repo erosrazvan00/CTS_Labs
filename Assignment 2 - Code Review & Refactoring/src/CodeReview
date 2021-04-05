@@ -1,0 +1,40 @@
+First of all, I created 2 necessary packages with specific name according to the purpose of the code:
+
+ro.ase.csie.cts.bankaccount
+ro.ase.csie.cts.bankaccount.exceptions 
+
+One for the main class and interface, and the second one containing all custom exceptions used in the development
+
+All variables are written using mixed camel case convention, having explicit names. (A problem in the previous code)
+I minimized the accesibility of attributes, turning them private ( public in the initial code) 
+I made public static fields final (to avoid caller changing the value)
+
+According to the initial code, the account_Type(accountType) have 4 different types, so should be an enum.
+I created the AccountType enum where with all the four types
+
+According to the lead which requested the getMonthlyMethod a must implementation in all classes, I created the unique Interface
+GetRateInterface which is implemented by the Account Class. 
+
+The toString method is now implemented by overriding. (Initial toString was normally written).
+
+The initial calculate method is now called calculateFee (I changed its name due to be more explici about the use of it)
+In this method are used 2 values (365 and .0125) so for them I created 2 static variables (totalNrDays, brokersFee)
+Here, I put the condition (accounts != null) because if the array was empty there will be no meaning for the method
+Also, the method didn't used indentation
+
+I used 3 custom Exceptions:
+InvalidActiveDaysException -> if the number of days is lower than 1 and grater than 365(nr of days in an year)
+InvalidLoadValueException -> if the loan value is smaller or equal than 0
+InvalidRateException -> if the rate is not in the 0, 1 Interval
+I used them in the constructor where I initialized the attributes. In the initial code, not all the attributes were initialized.  
+
+For the loanValue I decided to be <=0 because I in my point of view We can't get a loan of 0 money. 
+I deleted the double load() method the getter of rate (getRate()) and the print() method because I don't see them necessary in the code. 
+They were just returning their values and the print() one return a simple text. 
+They don't have any impact for the code itself or for the ones who are using it. 
+
+ 
+
+
+
+
