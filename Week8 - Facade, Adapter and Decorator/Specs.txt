@@ -17,3 +17,5 @@ a library (an API) must be developed
 The api contains many classes
 Not all classes are documented 
 the api SHOULD PROVIDE A SIMPLIFIED INTERFACE (def of Facade) 
+
+2 when you have to change abilites etc -> decorator
