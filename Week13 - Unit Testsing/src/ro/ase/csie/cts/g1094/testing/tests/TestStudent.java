@@ -12,6 +12,7 @@ import org.junit.Ignore;
 import org.junit.Test;
 
 import ro.ase.csie.cts.g1094.testing.exceptions.WorngAgeException;
+import ro.ase.csie.cts.g1094.testing.exceptions.WorngGradesException;
 import ro.ase.csie.cts.g1094.testing.exceptions.WrongNameException;
 import ro.ase.csie.cts.g1094.testing.models.Student;
 
@@ -93,5 +94,48 @@ public class TestStudent {
 	public void testSetAgeErrorConditionGreaterThanMax() throws WorngAgeException{
 		int newAge = Student.MAX_AGE + 1000;
 		student.setAge(newAge);
+	}
+	
+	@Test
+	public void testGetGradesAverageAscendingOrder() throws WorngGradesException {
+		ArrayList<Integer> sortedGrades = new ArrayList<>();
+		sortedGrades.add(7);
+		sortedGrades.add(8);
+		sortedGrades.add(9);
+		sortedGrades.add(10);
+		student.setGrades(sortedGrades);
+		float expectedAverage = 8.5f;
+		float computedAverage = student.getGradesAverage();
+		
+		float vb = (float)1/3 + (float)1/3 + (float)1/3;		
+		assertEquals("Testing with an ascending sorted of grades", expectedAverage, computedAverage,0);
+		
+		
+		
+	}
+	
+	@Test
+	public void testGetGradesAverageCardinalityZero() throws WorngGradesException {
+		ArrayList<Integer> grades = new ArrayList<Integer>();
+		student.setGrades(grades);
+		
+		
+		float expectedAverage = 0;
+		float computedAverage = student.getGradesAverage();
+		
+		assertEquals("Testing with an empty set of grades", expectedAverage, computedAverage, 0);
+	}
+	
+	@Test
+	public void testGetGradesAverageCardinalityOne() throws WorngGradesException {
+		ArrayList<Integer> grades = new ArrayList<Integer>();
+		int theGrade =10;
+		grades.add(theGrade);
+		
+		student.setGrades(grades);
+		float expectedAverage = theGrade;
+		float computedAverage = student.getGradesAverage();
+		
+		assertEquals("Testing with an empty set of grades", expectedAverage, computedAverage, 0);
 	}
 }
